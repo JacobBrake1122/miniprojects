@@ -20,12 +20,10 @@ let Finalpaycheck = paycheck - paycheckTax;
 console.log('Paycheck Amount: ' + Finalpaycheck);
 
 // Grade calc
-let gradeOne = 75.00;
-let gradeTwo = 100.00;
-let gradeThree = 65.00;
-let gradeTotal = gradeOne + gradeTwo + gradeThree
-let gradeFinal = gradeTotal / 3;
-console.log('Average Grade: ' + gradeFinal.toFixed(2))
+let pointsEarned = 75.00;
+let totalpossiblePoints = 100.00;
+let gradeFinal = pointsEarned / totalpossiblePoints;
+console.log('Points Earned On Assignment: ' + gradeFinal.toFixed(2))
 
 // Gas Cost Calc
 let gasCost = 4.79;
