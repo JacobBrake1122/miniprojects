@@ -1,23 +1,65 @@
-// tip calc
-let tipAmount;
-let subTotal = 67.72;
-let percent = 0.2;
-let totalBill;
+let tipOutput = document.getElementById('tipAmountOutput');
+let totalOutput = document.getElementById('totalBillOutput');
+let checkOutput = document.getElementById('paycheckAmountOutput');
+let gradeOutput = document.getElementById('percentGradeOutput');
+let gasOutput = document.getElementById('gasCostOutput');
 
-tipAmount = subTotal * percent
-console.log('Tip Amount: ' + tipAmount.toFixed(2))
+let tipBtn = document.getElementById("tipButton");
+tipBtn.addEventListener('click', function () {
 
-totalBill = subTotal + tipAmount
-console.log('Total Amount due: ' + totalBill.toFixed(2))
+    // tip calc
+    let subTotal = document.getElementById('subTotalInput').valueAsNumber;
+    let percentage = document.getElementById('percentageInput').valueAsNumber;
+    let tipAmount;
+    let totalBill;
 
-// paycheck calc
-let totalHours = 20;
-let hourlyWage = 15.92;
-let tax = 0.0625;
-let paycheck = totalHours * hourlyWage;
-let paycheckTax = paycheck * tax;
-let Finalpaycheck = paycheck - paycheckTax; 
-console.log('Paycheck Amount: ' + Finalpaycheck);
+    // math
+    tipAmount = subTotal * percentage;
+    totalBill = subTotal + tipAmount;
+
+    // 2 decimal places
+    tipAmount = tipAmount.toFixed(2);
+    totalBill = totalBill.toFixed(2);
+
+    // maximum output
+    tipOutput.innerHTML = "$" + tipAmount;
+    totalOutput.innerHTML = "$" + totalBill;
+
+})
+
+let paycheckBtn = document.getElementById("paycheckButton");
+paycheckBtn.addEventListener('click', function () {
+
+    // paycheck calc
+    let totalHours = document.getElementById('hoursWorkedInput').valueAsNumber;
+    let hourlyWage = document.getElementById('hourlyRateInput').valueAsNumber;
+    let paycheckFinal;
+
+    // math
+    paycheckFinal = totalHours * hourlyWage;
+
+    //maximum output
+    checkOutput.innerHTML = "$" + paycheckFinal;
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Grade calc
 let pointsEarned = 75.00;
