@@ -4,6 +4,7 @@ let totalOutput = document.getElementById('totalBillOutput');
 let checkOutput = document.getElementById('paycheckAmountOutput');
 let gradeOutput = document.getElementById('percentGradeOutput');
 let gasOutput = document.getElementById('gasCostOutput');
+let diceOutput = document.getElementById('diceOutput');
 
 
 let tipBtn = document.getElementById("tipButton");
@@ -101,7 +102,18 @@ gasBtn.addEventListener('click', function () {
 
 })
 
+let dieBtn = document.getElementById("dieButton");
+dieBtn.addEventListener('click', function () {
 
+    // Dice Roll Variables
+    let numberRolled;
 
+    // math for it
+    numberRolled = Math.floor(Math.random() * 6 + 1);
 
+    // 2 decimals
+    numberRolled = Math.floor(numberRolled);
 
+    // max output
+    diceOutput.innerHTML = numberRolled;
+})
